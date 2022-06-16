@@ -1,0 +1,45 @@
+.App {
+  margin: 0 15%;
+}
+
+.Navbar,
+.Navbar--menu,
+.Navbar--spacer {
+  display: flex;
+  flex-direction: row;
+}
+
+.Navbar {
+  border-bottom: 1px solid hsl(223deg, 64%, 98%);
+  justify-content: space-between;
+}
+
+.Navbar--title {
+  padding-right: 10px;
+  font-weight: 700;
+}
+
+.Navbar--menu {
+  justify-content: space-around;
+}
+
+.Navbar--menu--item {
+  color: hsl(220deg, 14%, 75%);
+  text-align: center;
+  padding: 15px;
+}
+
+.Navbar--cart,
+.Navbar--avatar {
+  max-width: 50px;
+  max-height: 50px;
+  padding: 0;
+  margin: 1em;
+}
+
+.Navbar--avatar--icon {
+  min-width: 50px;
+  max-height: 50px;
+}
+
+/*# sourceMappingURL=App.css.map */
