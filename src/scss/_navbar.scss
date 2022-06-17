@@ -1,3 +1,5 @@
+@use "colors" as *;
+
 .Navbar,
 .Navbar--menu,
 .Navbar--spacer {
@@ -29,8 +31,28 @@
 .Navbar--avatar {
   max-width: 50px;
   max-height: 50px;
-  padding: 0;
   margin: 1em;
+  position: relative;
+}
+
+.Navbar--cart {
+  padding: 1em;
+}
+
+.Navbar--cart--items {
+  background-color: $Orange;
+  border-radius: 100%;
+  text-align: center;
+  color: $White;
+  width: 16px;
+  font-size: 12px;
+  float: right;
+  z-index: 1;
+  margin: -5px 0 0 -10px;
+}
+
+.Navbar--cart--icon {
+  z-index: 0;
 }
 
 .Navbar--avatar--icon {
