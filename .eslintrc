@@ -1,0 +1,10 @@
+{
+  "extends": ["airbnb", "airbnb/hooks"],
+  "plugins": ["prettier"],
+  "rules": {
+    "jsx-quotes": ["warn", "prefer-single"],
+    "no-unused-vars": "warn",
+    "linebreak-style": "off",
+    "react/prop-types": "off"
+  }
+}
