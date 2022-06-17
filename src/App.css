@@ -3,6 +3,8 @@
 .Navbar--spacer {
   display: flex;
   flex-direction: row;
+  position: relative;
+  z-index: 0;
 }
 
 .Navbar {
@@ -44,12 +46,14 @@
   color: hsl(0deg, 0%, 100%);
   width: 16px;
   font-size: 12px;
+  position: relative;
   float: right;
   z-index: 1;
   margin: -5px 0 0 -10px;
 }
 
 .Navbar--cart--icon {
+  position: relative;
   z-index: 0;
 }
 
@@ -58,8 +62,261 @@
   max-height: 50px;
 }
 
+.Navbar--Hamburger-Menu,
+.Navbar-collapsible,
+.Nabvar-collapsible--background {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .Navbar--menu {
+    display: none;
+  }
+  .Navbar--Hamburger-Menu {
+    display: block;
+    margin: 1em 1.5em;
+    padding: 1.25em 0;
+    border: none;
+    background-color: transparent;
+  }
+  .Navbar-collapsible {
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    width: 33%;
+    height: 100%;
+    background-color: hsl(0deg, 0%, 100%);
+    padding: 0 25px;
+  }
+  .Nabvar-collapsible--background {
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0deg, 0%, 0%, 0.75);
+  }
+  .Navbar-collapsible--menu--item {
+    font-weight: 700;
+    margin-top: 25px;
+  }
+  .Navbar-collapsible--close-icon {
+    margin: 50px 0px;
+    border: none;
+    background-color: transparent;
+  }
+}
+.Main-Content {
+  margin: 15% 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Main-Content--display {
+  width: 40%;
+}
+
+.Main-Content--details {
+  width: 40%;
+}
+
+.Main-Content--display--image {
+  object-fit: contain;
+  position: relative;
+  z-index: 0;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px hsla(0deg, 0%, 0%, 0.75);
+}
+
+.Main-Content--display--thumbnails {
+  justify-content: flex-start;
+  gap: 0 45px;
+  margin-top: 25px;
+  display: flex;
+}
+.Main-Content--display--thumbnails .active {
+  border: 2px solid hsl(26deg, 100%, 55%);
+}
+
+.Main-Content--display--thumbnails--button {
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.Main-Content--display--thumbnails--button .active {
+  opacity: 0.25;
+}
+
+.Main-Content--display--thumbnails--image {
+  position: relative;
+  width: 75px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px hsla(0deg, 0%, 0%, 0.75);
+}
+
+.Main-Content--details--brand {
+  font-size: 12px;
+  color: hsl(26deg, 100%, 55%);
+  opacity: 0.8;
+  letter-spacing: 0.1em;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.Main-Content--details--description {
+  color: hsl(219deg, 9%, 45%);
+  opacity: 0.8;
+}
+
+.Main-Content--details--price,
+.Main-Content--details--discount {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.Main-Content--details--old-price {
+  color: hsl(220deg, 14%, 75%);
+  text-decoration: line-through;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.Main-Content--details--price {
+  color: hsl(220deg, 13%, 13%);
+}
+
+.Main-Content--details--discount {
+  padding: 0.5em;
+  color: hsl(26deg, 100%, 55%);
+  font-weight: 700;
+  padding: 5px 10px;
+  background-color: #ffeee0;
+  border-radius: 5px;
+  margin-top: 0;
+}
+
+.Main-Content--Shopping {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px 10px;
+}
+
+.Main-Content--Shopping--item-counter {
+  width: 150px;
+  border-radius: 15px;
+  background-color: hsl(223deg, 64%, 98%);
+}
+
+.Main-Content--Shopping--item-counter--minus,
+.Main-Content--Shopping--item-counter--count,
+.Main-Content--Shopping--item-counter--plus {
+  margin: 15px;
+  display: inline;
+  background-color: transparent;
+  border: none;
+}
+
+.Main-Content--Shopping--item-counter--count {
+  font-weight: 700;
+}
+
+.Main-Content--Shopping--atc-button {
+  padding: 15px;
+  width: 225px;
+  border-radius: 10px;
+  background-color: hsl(26deg, 100%, 55%);
+  border: none;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+}
+
+.Main-Content--Shopping--atc-button:hover {
+  box-shadow: -5px 25px 30px hsl(25deg, 100%, 94%);
+}
+
+.Main-Content--Shopping--atc-button--cart {
+  width: 15px;
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.Main-Content--arrow-spacer {
+  display: none;
+}
+
+.Main-Content--prev-arrow,
+.Main-Content--next-arrow {
+  text-align: center;
+  padding: 20px 25px;
+  border-radius: 100%;
+  background-color: hsl(0deg, 0%, 100%);
+  border: none;
+}
+
+@media only screen and (max-width: 1250px) {
+  .Main-Content--display {
+    width: 60%;
+  }
+  .Main-Content--details {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Main-Content--display {
+    width: 100%;
+  }
+  .Main-Content--details {
+    margin: 0 10%;
+    width: 100%;
+  }
+  .Main-Content--arrow-spacer {
+    display: flex;
+    position: absolute;
+    margin: 50%;
+    width: 90%;
+    z-index: 1;
+    justify-content: space-between;
+  }
+  .Main-Content--display--image {
+    max-width: 100%;
+  }
+  .Main-Content--display--thumbnails {
+    display: none;
+  }
+  .Main-Content--Shopping--atc-button,
+.Main-Content--Shopping--item-counter {
+    width: 100%;
+  }
+  .Main-Content--Shopping--item-counter {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .Main-Content--prev-arrow,
+.Main-Content--next-arrow {
+    padding: 5px 10px;
+  }
+}
 .App {
+  min-height: 100%;
+  max-width: 100%;
   margin: 0 15%;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .App {
+    margin: 0;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

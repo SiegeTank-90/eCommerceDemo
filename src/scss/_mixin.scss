@@ -1,5 +1,7 @@
+@use 'colors' as *;
+
 
 @mixin Boxes( ) {
-    border-radius: 15px;
-    box-shadow: 5px 5px 15px $BlackFaded;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px $BlackFaded;
 }

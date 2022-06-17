@@ -1,8 +1,23 @@
 @use 'colors' as *;
 @use 'mixin' as *;
 @use 'navbar' as *;
+@use 'content' as *;
 
 .App {
+  min-height: 100%;
+  max-width: 100%;
   margin: 0 15%;
 }
 
+.hidden {
+  display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .App {
+    margin: 0;
+  }
+  
+}
