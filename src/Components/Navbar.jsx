@@ -5,7 +5,7 @@ import Hamburger from '../images/icon-menu.svg';
 import Cart from './Cart';
 import 'animate.css';
 
-function Navbar() {
+function Navbar({ cartItems, setCartItems }) {
   const [isOpen, setIsOpen] = useState('hidden');
 
   function handleKeyboard(e) {
@@ -52,7 +52,7 @@ function Navbar() {
           </ul>
         </div>
         <div className='Navbar--spacer'>
-          <Cart itemsCount={1} />
+          <Cart cartItems={cartItems} setCartItems={setCartItems} />
           <div className='Navbar--avatar'>
             <img className='Navbar--avatar--icon' src={Avatar} alt='avatar' />
           </div>

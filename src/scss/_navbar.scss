@@ -1,4 +1,5 @@
 @use 'colors' as *;
+@use 'mixin' as *;
 
 .Navbar,
 .Navbar--menu,
@@ -35,13 +36,15 @@
   max-height: 50px;
   margin: 1em;
   position: relative;
+  border: none;
+  background-color: transparent;
 }
 
 .Navbar--cart {
   padding: 1em;
 }
 
-.Navbar--cart--items {
+.Navbar--cart--itemsCount {
   background-color: $Orange;
   border-radius: 100%;
   text-align: center;
@@ -70,7 +73,80 @@
   display: none;
 }
 
+.Navbar--cart-activeItems {
+  position: absolute;
+  z-index: 3;
+  margin-top: 75px;
+  margin-left: -225px;
+  background-color: white;
+  width: 400px;
+  min-height: 200px;
+  border: 1px solid $Light-LightBlue;
+  @include Boxes()
+}
 
+.Navbar--cart-activeItems--header {
+  font-size: 16px;
+  border-bottom: 1px solid $Light-LightBlue ;
+  padding: 15px;
+  
+}
+
+.Navbar--cart-activeItems--empty {
+  padding: 10% 25%;
+  font-size: 16px;
+  color: $Heavy-LightBlue;
+}
+
+.Navbar--cart-activeItems--list{
+  padding: 2.5% 15px;
+}
+
+.cart--item {
+  display: flex;
+  margin-top: 5px;
+}
+
+.cart--item--image img {
+  width: 50px;
+  border-radius: 5px;
+}
+
+.cart--item--details {
+  margin: 0 15px;
+}
+
+.cart--item--details-title {
+  font-size: 16px;
+  color: $Heavy-LightBlue;
+  margin: 0;
+}
+
+.cart--item--price {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 700;
+  color:  $Heavy-LightBlue;
+}
+.cart--item--total {
+  color:  $Heavy-DarkBlue;
+}
+
+.cart--item--delete{
+  padding-top: 15px;
+  background-color: transparent;
+  border: none;
+}
+
+.cart--checkout-button {
+  margin: 25px 5% 5px;
+  width: 80%;
+  padding: 20px 0;
+  background-color: $Orange;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
 
 @media only screen and (max-width: 1000px) {
   .Navbar--menu {
@@ -88,7 +164,7 @@
   .Navbar-collapsible {
     display: inline-block;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     width: 33%;
     height: 100%;
     background-color: $White;
@@ -114,5 +190,12 @@
     border: none;
     background-color: transparent;
   }
-}
 
+  .Navbar--cart-activeItems {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    margin: 100px 0;
+       
+  }
+}
