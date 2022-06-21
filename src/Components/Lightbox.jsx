@@ -40,7 +40,7 @@ function LightBox({
   }
 
   return (
-    <>
+    <div>
       {isLightboxVisible ? (
         <div role='button' tabIndex={0} onClick={ClickOutside} onKeyDown={ClickOutside} className='Lightbox'>
           <div ref={LightboxRef} type='button' className='Lightbox--content'>
@@ -53,8 +53,7 @@ function LightBox({
         </div>
       )
         : (null)}
-      ;
-    </>
+    </div>
   );
 }
 

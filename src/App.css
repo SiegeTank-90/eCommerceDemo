@@ -449,8 +449,6 @@
   }
 }
 .App {
-  min-height: 100%;
-  max-width: 100%;
   margin: 0 15%;
 }
 
@@ -460,6 +458,7 @@
 
 @media screen and (max-width: 1000px) {
   .App {
+    position: absolute;
     margin: 0;
   }
 }
