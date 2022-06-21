@@ -86,6 +86,7 @@ function ContentItem({
     }
   }
   return (
+
     <div className='Main-Content'>
       <div className='Main-Content--arrow-spacer'>
          <button onClick={handlePreview} type='button' className='Main-Content--prev-arrow'><img src={prev} alt='prev arrow' /></button>

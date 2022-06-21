@@ -32,7 +32,9 @@
     ],
     "rules": {
       "no-unused-vars": "warn",
-      "linebreak-style": "off"
+      "linebreak-style": "off",
+      "jsx-a11y/click-events-have-key-events" : "warn",
+      "jsx-a11y/no-static-element-interactions" : "warn"
     }
   },
   "browserslist": {

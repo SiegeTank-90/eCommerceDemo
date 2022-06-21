@@ -7,12 +7,14 @@
  display: flex;
  flex-wrap: wrap;
  justify-content: space-around;
+ position: relative;
+ z-index: 0;
 }
 
 .Main-Content--display {
  width: 40%;
  position: relative;
- z-index: -10;
+ z-index: 0;
 }
 
 .Main-Content--details {
@@ -143,6 +145,8 @@
  border-radius: 100%;
  background-color: $White;
  border: none;
+ position: relative;
+ z-index: 1;
 }
 
 @media only screen and (max-width: 1250px) {
@@ -175,6 +179,8 @@
 
  .Main-Content--display--image {
   max-width: 100%;
+  position: relative;
+  z-index: 0;
 
  }
 

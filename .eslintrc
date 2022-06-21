@@ -5,6 +5,8 @@
     "jsx-quotes": ["warn", "prefer-single"],
     "no-unused-vars": "warn",
     "linebreak-style": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "jsx-a11y/click-events-have-key-events" : "warn",
+    "jsx-a11y/no-static-element-interactions" : "warn"
   }
 }

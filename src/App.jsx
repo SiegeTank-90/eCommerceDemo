@@ -9,16 +9,18 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   return (
-    <div className='App'>
+    <>
       <LightBox currentImg={currentImg} setCurrentImg={setCurrentImg} />
-      <Navbar cartItems={cartItems} setCartItems={setCartItems} />
-      <ContentItem
-        cartItems={cartItems}
-        setCartItems={setCartItems}
-        currentImg={currentImg}
-        setCurrentImg={setCurrentImg}
-      />
-    </div>
+      <div className="App">
+        <Navbar cartItems={cartItems} setCartItems={setCartItems} />
+        <ContentItem
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+          currentImg={currentImg}
+          setCurrentImg={setCurrentImg}
+        />
+      </div>
+    </>
   );
 }
 

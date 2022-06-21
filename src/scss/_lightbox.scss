@@ -1,0 +1,25 @@
+@use 'colors' as *;
+@use 'mixin' as *;
+
+.Lightbox {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    padding: 10% 0;
+    z-index: 4;
+    background-color: $BlackFaded;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.Lightbox--img {
+    border-radius: 10px;
+    text-align: center;
+    object-fit: contain;
+    max-width: 600px;
+    max-height: 600px;
+}
+.LightBox--prev,
+.LightBox--next {
+    width: 15%;
+}
