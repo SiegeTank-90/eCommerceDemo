@@ -42,14 +42,15 @@
 
 .Navbar--cart {
   padding: 1em;
+ 
 }
 
 .Navbar--cart--itemsCount {
   background-color: $Orange;
   border-radius: 100%;
+  padding: 1.5px;
   text-align: center;
   color: $White;
-  width: 16px;
   font-size: 12px;
   position: relative;
   float: right;

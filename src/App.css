@@ -44,9 +44,9 @@
 .Navbar--cart--itemsCount {
   background-color: hsl(26deg, 100%, 55%);
   border-radius: 100%;
+  padding: 1.5px;
   text-align: center;
   color: hsl(0deg, 0%, 100%);
-  width: 16px;
   font-size: 12px;
   position: relative;
   float: right;
