@@ -399,7 +399,7 @@
   z-index: 4;
   background-color: hsla(0deg, 0%, 0%, 0.75);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .Lightbox--img {
@@ -410,11 +410,44 @@
   max-height: 600px;
 }
 
-.LightBox--prev,
-.LightBox--next {
-  width: 15%;
+.LightBox--arrows {
+  margin: 10%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 5;
 }
 
+.LightBox--prev,
+.LightBox--next {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  text-align: center;
+  padding: 5px 0 0;
+  background-color: white;
+  border: none;
+}
+
+.Lightbox--content {
+  display: flex;
+  max-height: 600px;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .LightBox--arrows {
+    margin: 25%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .Lightbox {
+    display: none;
+  }
+}
 .App {
   min-height: 100%;
   max-width: 100%;

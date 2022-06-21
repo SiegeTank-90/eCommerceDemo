@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import img1 from '../images/product1/image-product-1.jpg';
 import img2 from '../images/product1/image-product-2.jpg';
 import img3 from '../images/product1/image-product-3.jpg';
@@ -7,7 +7,14 @@ import img4 from '../images/product1/image-product-4.jpg';
 import prev from '../images/icon-previous.svg';
 import next from '../images/icon-next.svg';
 
-function LightBox({ currentImg, setCurrentImg }) {
+function LightBox({
+  isLightboxVisible,
+  setIsLightboxVisible,
+  currentImg,
+  setCurrentImg,
+}) {
+  const LightboxRef = useRef();
+
   let DisplayImg = img1;
   if (currentImg === 1) {
     DisplayImg = img1;
@@ -19,12 +26,35 @@ function LightBox({ currentImg, setCurrentImg }) {
     DisplayImg = img4;
   }
 
+  function handlePreview(e) {
+    if (e.target.closest('button').className === 'LightBox--prev' && currentImg !== 1) {
+      setCurrentImg(currentImg - 1);
+    } else if (e.target.closest('button').className === 'LightBox--next' && currentImg !== 4) {
+      setCurrentImg(currentImg + 1);
+    }
+  }
+  function ClickOutside(e) {
+    if (!LightboxRef.current || !LightboxRef.current.contains(e.target)) {
+      setIsLightboxVisible(false);
+    }
+  }
+
   return (
-    <div className='Lightbox'>
-      <div className='LightBox--prev'><img src={prev} alt='previous' /></div>
-      <img className='Lightbox--img' src={DisplayImg} alt='Lightbox Shoe' />
-      <div className='LightBox--mext'><img src={next} alt='next' /></div>
-    </div>
+    <>
+      {isLightboxVisible ? (
+        <div role='button' tabIndex={0} onClick={ClickOutside} onKeyDown={ClickOutside} className='Lightbox'>
+          <div ref={LightboxRef} type='button' className='Lightbox--content'>
+            <div className='LightBox--arrows'>
+              <button type='button' onClick={handlePreview} className='LightBox--prev'><img src={prev} alt='previous' /></button>
+              <button type='button' onClick={handlePreview} className='LightBox--next'><img src={next} alt='next' /></button>
+            </div>
+            <img className='Lightbox--img' src={DisplayImg} alt='Lightbox Shoe' />
+          </div>
+        </div>
+      )
+        : (null)}
+      ;
+    </>
   );
 }
 

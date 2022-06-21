@@ -24,6 +24,7 @@ function ContentItem({
   setCurrentImg,
   cartItems,
   setCartItems,
+  setIsLightboxVisible,
 }) {
   const imageArray = [];
   let item = {
@@ -85,15 +86,22 @@ function ContentItem({
       }
     }
   }
+  function handleLightbox() {
+    const { innerWidth: width } = window;
+    if (width > 1000) {
+      setIsLightboxVisible(true);
+    }
+  }
+
   return (
 
     <div className='Main-Content'>
       <div className='Main-Content--arrow-spacer'>
-         <button onClick={handlePreview} type='button' className='Main-Content--prev-arrow'><img src={prev} alt='prev arrow' /></button>
-         <button onClick={handlePreview} type='button' className='Main-Content--next-arrow'><img src={next} alt='next arrow' /></button>
+        <button onClick={handlePreview} type='button' className='Main-Content--prev-arrow'><img src={prev} alt='prev arrow' /></button>
+        <button onClick={handlePreview} type='button' className='Main-Content--next-arrow'><img src={next} alt='next arrow' /></button>
       </div>
       <div className='Main-Content--display'>
-        <img className='Main-Content--display--image' src={DisplayImg} alt='Display' />
+        <img onClick={handleLightbox} onKeyDown={handleLightbox} className='Main-Content--display--image' src={DisplayImg} alt='Display' />
         <div className='Main-Content--display--thumbnails'>{imageArray}</div>
       </div>
       <div className='Main-Content--details'>
@@ -104,15 +112,15 @@ function ContentItem({
         <p className='Main-Content--details--discount'>{item.discount}</p>
         <h2 className='Main-Content--details--old-price'>{item.orgPrice}</h2>
         <div className='Main-Content--Shopping'>
-            <div className='Main-Content--Shopping--item-counter'>
-                <button onClick={incrementItemCounter} className='Main-Content--Shopping--item-counter--minus' type='button'><img className='minus' src={minus} alt='-' /></button>
-                <div className='Main-Content--Shopping--item-counter--count'>{itemCounter}</div>
-                <button onClick={incrementItemCounter} className='Main-Content--Shopping--item-counter--plus' type='button'><img className='plus' src={plus} alt='+' /></button>
-            </div>
-            <button onClick={addToCart} type='button' className='Main-Content--Shopping--atc-button'>
-                <img className='Main-Content--Shopping--atc-button--cart' src={cart} alt='cart' />
-                <span className='Main-Content--Shopping--atc-button--text'>Add to cart</span>
-            </button>
+          <div className='Main-Content--Shopping--item-counter'>
+            <button onClick={incrementItemCounter} className='Main-Content--Shopping--item-counter--minus' type='button'><img className='minus' src={minus} alt='-' /></button>
+            <div className='Main-Content--Shopping--item-counter--count'>{itemCounter}</div>
+            <button onClick={incrementItemCounter} className='Main-Content--Shopping--item-counter--plus' type='button'><img className='plus' src={plus} alt='+' /></button>
+          </div>
+          <button onClick={addToCart} type='button' className='Main-Content--Shopping--atc-button'>
+            <img className='Main-Content--Shopping--atc-button--cart' src={cart} alt='cart' />
+            <span className='Main-Content--Shopping--atc-button--text'>Add to cart</span>
+          </button>
         </div>
 
       </div>

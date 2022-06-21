@@ -8,8 +8,8 @@
     padding: 10% 0;
     z-index: 4;
     background-color: $BlackFaded;
-    display: flex; 
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
 }
 
 .Lightbox--img {
@@ -19,7 +19,45 @@
     max-width: 600px;
     max-height: 600px;
 }
+
+.LightBox--arrows {
+    margin: 10%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 5;
+}
 .LightBox--prev,
 .LightBox--next {
-    width: 15%;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    text-align: center;
+    padding: 5px 0 0;
+    background-color: white;
+    border: none;
+}
+
+.Lightbox--content {
+    display: flex;
+    max-height: 600px;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+@media screen and (max-width: 1300px) {
+    .LightBox--arrows {
+        margin: 25%;
+    }
+
+   
+}
+
+@media screen and (max-width: 1000px) {
+    .Lightbox {
+        display: none;
+    }
+    
 }

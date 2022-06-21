@@ -3,7 +3,7 @@ import ShoppingCart from '../images/icon-cart.svg';
 import Delete from '../images/icon-delete.svg';
 
 function Cart({ cartItems, setCartItems }) {
-  const [displayCart, setDisplayCart] = useState('');
+  const [displayCart, setDisplayCart] = useState('hidden');
   const items = [];
   let totalitems = 0;
   function Deleteitem(i) {
