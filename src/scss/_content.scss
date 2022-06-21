@@ -96,7 +96,9 @@
 }
 
 .Main-Content--Shopping--item-counter {
- width: 150px;
+ width: 175px;
+ display: flex;
+ justify-content: space-between;
  border-radius: 15px;
  background-color: $Light-LightBlue;
 }
@@ -104,7 +106,7 @@
 .Main-Content--Shopping--item-counter--minus,
 .Main-Content--Shopping--item-counter--count,
 .Main-Content--Shopping--item-counter--plus {
- margin: 15px;
+ margin: 10px 15px;
  display: inline;
  background-color: transparent;
  border: none;

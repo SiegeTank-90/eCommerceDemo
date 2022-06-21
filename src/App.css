@@ -78,6 +78,8 @@
   background-color: white;
   width: 400px;
   min-height: 200px;
+  max-height: 400px;
+  overflow-y: scroll;
   border: 1px solid hsl(223deg, 64%, 98%);
   border-radius: 10px;
   box-shadow: 1px 1px 15px hsla(0deg, 0%, 0%, 0.75);
@@ -291,7 +293,9 @@
 }
 
 .Main-Content--Shopping--item-counter {
-  width: 150px;
+  width: 175px;
+  display: flex;
+  justify-content: space-between;
   border-radius: 15px;
   background-color: hsl(223deg, 64%, 98%);
 }
@@ -299,7 +303,7 @@
 .Main-Content--Shopping--item-counter--minus,
 .Main-Content--Shopping--item-counter--count,
 .Main-Content--Shopping--item-counter--plus {
-  margin: 15px;
+  margin: 10px 15px;
   display: inline;
   background-color: transparent;
   border: none;
@@ -449,7 +453,7 @@
   }
 }
 .App {
-  margin: 0 15%;
+  margin: 0 12.5%;
 }
 
 .hidden {
